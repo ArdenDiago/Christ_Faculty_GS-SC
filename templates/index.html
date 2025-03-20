@@ -311,6 +311,68 @@ h2 {
     font-weight: bold;
 }
 
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-container input {
+    margin-top: 50px;
+    padding: 5px;
+    font-size: 14px;
+    width: 180px; /* Keeps width consistent */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-container1 input {
+    margin-top: 50px;
+    padding: 5px;
+    font-size: 14px;
+    width: 180px; /* Keeps width consistent */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-container3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-container3 input {
+    margin-top: 50px;
+    padding: 5px;
+    font-size: 14px;
+    width: 180px; /* Keeps width consistent */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.filter-container4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-container4 input {
+    margin-top: 50px;
+    padding: 5px;
+    font-size: 14px;
+    width: 180px; /* Keeps width consistent */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
  </style>
 </head>
 <body>
@@ -354,6 +416,9 @@ h2 {
         <div id="table-container">
             <button id="download-btn" onclick="downloadExcel()">Download</button>
         <div id="resultContainer" class="hidden">
+            <div class="filter-container">
+                <input type="text" id="filterName" placeholder="Filter by Name" onkeyup="filterTable()">
+            </div>
             <h2>Results</h2>
             <table id="resultsTable">
                 <thead>
@@ -380,6 +445,10 @@ h2 {
         </div>
 
         <div id="googleScholarOnlyContainer" class="hidden">
+            <div class="filter-container3">
+                <input type="text" id="filterNameGSYearly" placeholder="Filter by Name" onkeyup="filterGoogleScholarYearly()">
+                <input type="text" id="filterYearlyCitationsGS" placeholder="Filter by Yearly Citations" onkeyup="filterGoogleScholarYearly()">
+            </div>
             <h2>Yearly Citations(Google scholar)</h2>
             <table id="googleScholarOnlyTable">
                 <thead>
@@ -398,6 +467,10 @@ h2 {
         </div>
 
         <div id="paperDetailsContainer" class="hidden">
+            <div class="filter-container1">
+                <input type="text" id="filterNameGSDetails" placeholder="Filter by Name" onkeyup="filterGoogleScholarPapers()">
+                <input type="text" id="filterYearGSDetails" placeholder="Filter by Year" onkeyup="filterGoogleScholarPapers()">
+            </div>
             <h2>Paper Details (Google Scholar)</h2>
             <table id="paperDetailsTable">
                 <thead>
@@ -417,6 +490,10 @@ h2 {
     </div>
     <div class="table-wrapper"></div>
     <div id="paperDetailsScopusContainer" class="hidden">
+        <div class="filter-container4">
+            <input type="text" id="filterNameScopus" placeholder="Filter by Name" onkeyup="filterScopusPapers()">
+            <input type="text" id="filterYearScopus" placeholder="Filter by Year" onkeyup="filterScopusPapers()">
+        </div>
         <h2>Paper Details (Scopus)</h2>
         <table id="paperDetailsScopusTable">
             <thead>
@@ -692,10 +769,136 @@ function downloadExcel() {
     }
 }
     
+</script>
+<script>
+    function filterTable() {
+        let table = document.getElementById("resultsTable");
+        let tbody = table.querySelector("tbody");
+        let filterValue = document.getElementById("filterName").value.toLowerCase();
+    
+        tbody.querySelectorAll("tr").forEach(row => {
+            let nameCell = row.children[0]; // First column (Name)
+            if (nameCell) {
+                let text = nameCell.innerText.toLowerCase();
+                row.style.display = text.includes(filterValue) ? "" : "none";
+            }
+        });
+    }
     </script>
+  <script>
+    function filterGoogleScholarPapers() {
+        let table = document.getElementById("paperDetailsTable");
+        let tbody = table.querySelector("tbody");
+        let nameFilter = document.getElementById("filterNameGSDetails").value.toLowerCase().trim();
+        let yearFilter = document.getElementById("filterYearGSDetails").value.toLowerCase().trim();
+        
+        let showAuthor = false; // Track if an author's row should be shown
+    
+        tbody.querySelectorAll("tr").forEach(row => {
+            let firstCell = row.children[0];
+            let isAuthorRow = row.children.length === 1; // Author row spans across columns
+    
+            if (isAuthorRow) {
+                let authorName = firstCell.innerText.toLowerCase().trim();
+                showAuthor = nameFilter === "" || authorName.includes(nameFilter); // Check if author's name matches
+                row.style.display = "none"; // Initially hide the author row
+            } else {
+                let yearCell = row.children.length > 2 ? row.children[2] : null; // Get Year column (3rd column)
+                let showRow = showAuthor; // Show papers only if author is visible
+    
+                if (yearFilter && yearCell) {
+                    let paperYear = yearCell.innerText.toLowerCase().trim();
+                    showRow = showAuthor && paperYear.includes(yearFilter); // Show only if both match
+                }
+    
+                row.style.display = showRow ? "" : "none";
+    
+                // If at least one paper matches, show the author's row
+                if (showRow) {
+                    firstCell.closest("tbody").querySelectorAll("tr").forEach(authorRow => {
+                        if (authorRow.children.length === 1 && authorRow.children[0].innerText.toLowerCase().includes(nameFilter)) {
+                            authorRow.style.display = "";
+                        }
+                    });
+                }
+            }
+        });
+    }
+    </script>
+    
+  <script>
+    function filterGoogleScholarYearly() {
+        let table = document.getElementById("googleScholarOnlyTable");
+        let tbody = table.querySelector("tbody");
+        let nameFilter = document.getElementById("filterNameGSYearly").value.toLowerCase().trim();
+        let yearlyCitationsFilter = document.getElementById("filterYearlyCitationsGS").value.toLowerCase().trim();
+    
+        tbody.querySelectorAll("tr").forEach(row => {
+            let nameCell = row.children[0]; // First column (Name)
+            let yearlyCitationsCell = row.children[4]; // Fifth column (Yearly Citations)
+            let showRow = true;
+    
+            if (nameFilter && nameCell && !nameCell.innerText.toLowerCase().includes(nameFilter)) {
+                showRow = false;
+            }
+    
+            if (yearlyCitationsFilter && yearlyCitationsCell && !yearlyCitationsCell.innerText.toLowerCase().includes(yearlyCitationsFilter)) {
+                showRow = false;
+            }
+    
+            row.style.display = showRow ? "" : "none";
+        });
+    }
+    </script>
+<script>
+    function filterScopusPapers() {
+        let table = document.getElementById("paperDetailsScopusTable");
+        let tbody = table.querySelector("tbody");
+        let nameFilter = document.getElementById("filterNameScopus").value.toLowerCase().trim();
+        let yearFilter = document.getElementById("filterYearScopus").value.toLowerCase().trim();
+        
+        let showAuthor = false; // Track if an author's row should be shown
+    
+        tbody.querySelectorAll("tr").forEach(row => {
+            let firstCell = row.children[0];
+            let isAuthorRow = row.children.length === 1; // Author row spans across columns
+    
+            if (isAuthorRow) {
+                let authorName = firstCell.innerText.toLowerCase().trim();
+                showAuthor = nameFilter === "" || authorName.includes(nameFilter); // Check if author's name matches
+                row.style.display = "none"; // Initially hide the author
+            } else {
+                let yearCell = row.children.length > 2 ? row.children[2] : null; // Get Year column (3rd column)
+                let showRow = showAuthor; // Show papers only if author is visible
+    
+                if (yearFilter && yearCell) {
+                    let paperYear = yearCell.innerText.toLowerCase().trim();
+                    showRow = showAuthor && paperYear.includes(yearFilter); // Show only if both match
+                }
+    
+                row.style.display = showRow ? "" : "none";
+    
+                // If any paper under an author is visible, show the author's row
+                if (showRow) {
+                    firstCell.closest("tbody").querySelectorAll("tr").forEach(authorRow => {
+                        if (authorRow.children.length === 1 && authorRow.children[0].innerText.toLowerCase().includes(nameFilter)) {
+                            authorRow.style.display = "";
+                        }
+                    });
+                }
+            }
+        });
+    }
+    </script>
+    
+    
+        
+        
+
+    
     <footer>
         <div class="footer-container">
-            <p>Ideation by <span class="name">Dr. Ashok Immanuel</span>, guided by <span class="name">Dr. Nisha Varghese</span>, developed & maintained by <span class="name">Sai Darshan</span> and <span class="name">Parichoy Nandi</span>.</p>
+            <p>Ideation by <span class="name">Dr. Ashok Immanuel</span>, guided by <span class="name">Dr. Nisha Varghese</span>, developed & maintained by<span class="name"> Parichoy Nandi</span>.</p>
         </div>
     </footer>
     
