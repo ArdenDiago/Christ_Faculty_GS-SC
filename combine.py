@@ -114,10 +114,33 @@ def main(author_ids):
     save_combined_to_excel(combined_data, 'combined_papers_data.xlsx')
 
 if __name__ == "__main__":
-    # List of tuples with author ID, author name, and Google Scholar link
-    author_ids = [
-        ("57223100630", "K. Amrutha","https://scholar.google.com/citations?user=fzs9d1IAAAAJ&hl=en"),
-        ("12345678900", "H. B. Anita", "https://scholar.google.com/citations?user=-ZYIiGAAAAAJ&hl=en"),
-        # Add more authors as needed
-    ]
-    main(author_ids)
+    from services.authors import scopus_authors, gscholar_authors
+
+    def main():
+        combined_data = []  # Store combined data from Scopus and Google Scholar
+
+        for s_author, g_author in zip(scopus_authors, gscholar_authors):
+            # Fetch papers for the given author ID from Scopus
+            scopus_response_json = fetch_author_papers(s_author['scopus_id'])
+            total_papers_scopus, total_citations_scopus, h_index_scopus = parse_scopus_data(scopus_response_json)
+
+            # Fetch data from Google Scholar using the provided link
+            total_papers_gscholar, total_citations_gscholar, h_index_gscholar, i10_index = fetch_google_scholar_data(g_author['gscholar_url'])
+
+            # Append to combined data
+            combined_data.append({
+                'Name': g_author['name'],
+                'Total Papers (Google Scholar)': total_papers_gscholar,
+                'Total Citations (Google Scholar)': total_citations_gscholar,
+                'H-Index (Google Scholar)': h_index_gscholar,
+                'I10 Index (Google Scholar)': i10_index,
+                'Total Papers (Scopus)': total_papers_scopus,
+                'Total Citations (Scopus)': total_citations_scopus,
+                'H-Index (Scopus)': h_index_scopus,
+            })
+
+        # Save combined data to Excel
+        save_combined_to_excel(combined_data, 'combined_papers_data.xlsx')
+
+    if __name__ == "__main__":
+        main()
