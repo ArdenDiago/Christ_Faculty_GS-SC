@@ -50,27 +50,23 @@ def generate_report():
                 google_scholar_data.append({
                     'Name': entry['name'],
                     'Total Citations': entry['citations_google_scholar'],
-                    'H-Index': entry['i10_index_google_scholar'],
-                    'I10 Index': entry['h_index_google_scholar'],
+                    'H-Index': entry['h_index_google_scholar'],
+                    'I10 Index': entry['i10_index_google_scholar'],
                     'Yearly Citations': entry['citations_by_year']
                 })
             return jsonify(google_scholar_data)
-
-        # If source is "average", return all data per author
-        if source == 'average':
-            return jsonify(combined_data)
 
         # Filter data based on the source requested
         filtered_data = []
         for entry in combined_data:
             filtered_entry = {'Name': entry.get('name', '')}
-            if source == 'googleScholar' or source == 'both':
+            if source in ['googleScholar', 'both', 'average']:
                 filtered_entry['Total Papers (Google Scholar)'] = entry.get('papers_google_scholar', 0)
                 filtered_entry['Total Citations (Google Scholar)'] = entry.get('citations_google_scholar', 0)
                 filtered_entry['H-Index (Google Scholar)'] = entry.get('h_index_google_scholar', 0)
                 filtered_entry['I10 Index (Google Scholar)'] = entry.get('i10_index_google_scholar', 0)
                 filtered_entry['Yearly Citations'] = entry.get('citations_by_year', '')
-            if source == 'scopus' or source == 'both':
+            if source in ['scopus', 'both', 'average']:
                 filtered_entry['Total Papers (Scopus)'] = entry.get('papers_scopus', 0)
                 filtered_entry['Total Citations (Scopus)'] = entry.get('citations_scopus', 0)
                 filtered_entry['H-Index (Scopus)'] = entry.get('h_index_scopus', 0)

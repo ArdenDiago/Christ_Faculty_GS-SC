@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,66 +9,73 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
-    background-image: url("/static/clogo.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+            background-image: url("/static/clogo.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
             margin: 0;
             padding: 20px;
-            color: #333;  
+            color: #333;
             min-height: 90vh;
-    position: relative;
-    padding-bottom: 50px;          
+            position: relative;
+            padding-bottom: 50px;
         }
 
 
         .logo {
-        position: absolute;
-        top: 10px; 
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2; 
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
         }
 
-.logo img {
-    max-width: 100px; 
-    height: auto;
-}
+        .logo img {
+            max-width: 100px;
+            height: auto;
+        }
+
         h1 {
-    text-align: center;
-    font-size: 28px;
-    color: #0056b3;
-    margin-bottom: 10px;
-    font-weight: bold;
-    margin-top: 90px; 
-}
+            text-align: center;
+            font-size: 28px;
+            color: #0056b3;
+            margin-bottom: 10px;
+            font-weight: bold;
+            margin-top: 90px;
+        }
 
-h2 {
-    text-align: center;
-    font-size: 22px;
-    color: #333;
-    margin-bottom: 10px;
-    margin-top: 10px; 
-}
-.container {
-    max-width: 1000px;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.7); /* White with transparency */
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    padding-top: 60px;
-    min-height: 245px;
-    backdrop-filter: blur(10px); /* Adjust blur amount */
-    border-radius: 10px; /* Optional: Adds smooth edges */
-}
+        h2 {
+            text-align: center;
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.7);
+            /* White with transparency */
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-top: 60px;
+            min-height: 245px;
+            backdrop-filter: blur(10px);
+            /* Adjust blur amount */
+            border-radius: 10px;
+            /* Optional: Adds smooth edges */
+        }
+
         .table-separator {
-    border-left: 2px solid #ff6347;
-}
+            border-left: 2px solid #ff6347;
+        }
 
-#resultsTable tbody td:nth-child(6) {
-    border-left: 2px solid #ff6347;
-}
+        #resultsTable tbody td:nth-child(6) {
+            border-left: 2px solid #ff6347;
+        }
+
         .radio-group {
             display: flex;
             margin-bottom: 20px;
@@ -84,20 +92,20 @@ h2 {
         }
 
         button {
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-left: 50px;
-    margin-top: -5px;  
-    position: relative; 
-    top:45px;
-    z-index: 1000;  
-}
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-left: 50px;
+            margin-top: -5px;
+            position: relative;
+            top: 45px;
+            z-index: 1000;
+        }
 
 
         button:hover {
@@ -117,7 +125,8 @@ h2 {
             background-color: white;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
@@ -144,38 +153,40 @@ h2 {
         .table-separator {
             border-left: 2px solid #ff6347;
         }
+
         .scopus-papers-table {
-    width: auto;
-    max-width: 100%;
-    margin-bottom: 1rem;
-    border-collapse: collapse;
-}
+            width: auto;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            border-collapse: collapse;
+        }
 
-.scopus-papers-table th,
-.scopus-papers-table td {
-    padding: 0.75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-    text-align: left;
-    white-space: nowrap;
-}
+        .scopus-papers-table th,
+        .scopus-papers-table td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+            text-align: left;
+            white-space: nowrap;
+        }
 
-.scopus-papers-table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
-}
+        .scopus-papers-table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
 
-.scopus-papers-table tbody + tbody {
-    border-top: 2px solid #dee2e6;
-}
+        .scopus-papers-table tbody+tbody {
+            border-top: 2px solid #dee2e6;
+        }
 
-.scopus-papers-table .paper-title {
-    max-width: 300px;
-    white-space: normal;
-    word-wrap: break-word;
-}
+        .scopus-papers-table .paper-title {
+            max-width: 300px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
 
-        .google-scholar-header, .scopus-header {
+        .google-scholar-header,
+        .scopus-header {
             text-align: center;
         }
 
@@ -186,19 +197,19 @@ h2 {
         }
 
         .radio-container {
-    position: absolute;
-    top: 105px; 
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    max-width: 250px;
-    background-color: white;
-    z-index: 1;
-}
+            position: absolute;
+            top: 105px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 250px;
+            background-color: white;
+            z-index: 1;
+        }
 
         .radio-row {
             display: flex;
@@ -214,7 +225,7 @@ h2 {
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            max-width:250px;
+            max-width: 250px;
         }
 
 
@@ -228,153 +239,163 @@ h2 {
         .radio-row input[type="radio"] {
             margin-right: 10px;
         }
+
         #generateButton {
             margin-top: 10px;
         }
+
         .table-wrapper {
-    max-height: 500px; 
-    overflow-y: auto;
-    border: 1px solid #ddd;
-}
+            max-height: 500px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+        }
 
-#paperDetailsScopusTable {
-    width: 100%;
-}
+        #paperDetailsScopusTable {
+            width: 100%;
+        }
 
-#paperDetailsScopusTable thead {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    z-index: 1;
-}
+        #paperDetailsScopusTable thead {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            z-index: 1;
+        }
 
-#paperDetailsScopusContainer {
-    margin-top: 20px;
-    max-width: 1000px;  
-    margin-left: auto;
-    margin-right: auto;
-}
-#table-container {
-    position: relative;
-}
+        #paperDetailsScopusContainer {
+            margin-top: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-#download-btn {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 10;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-#download-btn:hover {
-    background-color: #004494;
-}
         #table-container {
             position: relative;
         }
 
-            
-    /* .radio-row:first-child {
+        #download-btn {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #download-btn:hover {
+            background-color: #004494;
+        }
+
+        #table-container {
+            position: relative;
+        }
+
+
+        /* .radio-row:first-child {
         margin-bottom: 15px;
         padding-bottom: 15px;
         border-bottom: 1px solid #eee;
     } */
 
 
-    footer {
-    background-color: #0056b3;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    width: 98.7%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            width: 98.7%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
 
 
-.footer-container {
-    max-width: 1000px;
-    margin: auto;
-}
+        .footer-container {
+            max-width: 1000px;
+            margin: auto;
+        }
 
-.name {
-    font-weight: bold;
-}
+        .name {
+            font-weight: bold;
+        }
 
-.filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
-}
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
 
-.filter-container input {
-    margin-top: 50px;
-    padding: 5px;
-    font-size: 14px;
-    width: 180px; /* Keeps width consistent */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        .filter-container input {
+            margin-top: 50px;
+            padding: 5px;
+            font-size: 14px;
+            width: 180px;
+            /* Keeps width consistent */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-.filter-container1 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
-}
+        .filter-container1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
 
-.filter-container1 input {
-    margin-top: 50px;
-    padding: 5px;
-    font-size: 14px;
-    width: 180px; /* Keeps width consistent */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        .filter-container1 input {
+            margin-top: 50px;
+            padding: 5px;
+            font-size: 14px;
+            width: 180px;
+            /* Keeps width consistent */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-.filter-container3 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
-}
+        .filter-container3 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
 
-.filter-container3 input {
-    margin-top: 50px;
-    padding: 5px;
-    font-size: 14px;
-    width: 180px; /* Keeps width consistent */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.filter-container4 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
-}
+        .filter-container3 input {
+            margin-top: 50px;
+            padding: 5px;
+            font-size: 14px;
+            width: 180px;
+            /* Keeps width consistent */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-.filter-container4 input {
-    margin-top: 50px;
-    padding: 5px;
-    font-size: 14px;
-    width: 180px; /* Keeps width consistent */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
- </style>
+        .filter-container4 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .filter-container4 input {
+            margin-top: 50px;
+            padding: 5px;
+            font-size: 14px;
+            width: 180px;
+            /* Keeps width consistent */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -383,7 +404,7 @@ h2 {
         </div>
         <h1>CS Scholars Data</h1>
         <h2>Citation Report</h2>
-        
+
         <div class="radio-container">
             <div class="radio-row">
                 <label>
@@ -410,76 +431,102 @@ h2 {
                 </label>
             </div>
         </div>
-    
+
         <button id="generateButton">Generate Report</button>
         <hr style="margin: 1px;">
         <div id="table-container">
             <button id="download-btn" onclick="downloadExcel()">Download</button>
-        <div id="resultContainer" class="hidden">
-            <div class="filter-container">
-                <input type="text" id="filterName" placeholder="Filter by Name" onkeyup="filterTable()">
+            <div id="resultContainer" class="hidden">
+                <div class="filter-container">
+                    <input type="text" id="filterName" placeholder="Filter by Name" onkeyup="filterTable()">
+                </div>
+                <h2>Results</h2>
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th colspan="4" class="google-scholar-header">Google Scholar</th>
+                            <th class="table-separator scopus-header" colspan="3">Scopus</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th class="google-scholar-header">Total Papers</th>
+                            <th class="google-scholar-header">Total Citations</th>
+                            <th class="google-scholar-header">H-Index</th>
+                            <th class="google-scholar-header">I10 Index</th>
+                            <th class="table-separator scopus-header">Total Papers</th>
+                            <th class="scopus-header">Total Citations</th>
+                            <th class="scopus-header">H-Index</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- data is be populated here -->
+                    </tbody>
+                </table>
             </div>
-            <h2>Results</h2>
-            <table id="resultsTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th colspan="4" class="google-scholar-header">Google Scholar</th>
-                        <th class="table-separator scopus-header" colspan="3">Scopus</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th class="google-scholar-header">Total Papers</th>
-                        <th class="google-scholar-header">Total Citations</th>
-                        <th class="google-scholar-header">H-Index</th>
-                        <th class="google-scholar-header">I10 Index</th>
-                        <th class="table-separator scopus-header">Total Papers</th>
-                        <th class="scopus-header">Total Citations</th>
-                        <th class="scopus-header">H-Index</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- data is be populated here -->
-                </tbody>
-            </table>
-        </div>
 
-        <div id="googleScholarOnlyContainer" class="hidden">
-            <div class="filter-container3">
-                <input type="text" id="filterNameGSYearly" placeholder="Filter by Name" onkeyup="filterGoogleScholarYearly()">
-                <input type="text" id="filterYearlyCitationsGS" placeholder="Filter by Yearly Citations" onkeyup="filterGoogleScholarYearly()">
+            <div id="googleScholarOnlyContainer" class="hidden">
+                <div class="filter-container3">
+                    <input type="text" id="filterNameGSYearly" placeholder="Filter by Name"
+                        onkeyup="filterGoogleScholarYearly()">
+                    <input type="text" id="filterYearlyCitationsGS" placeholder="Filter by Yearly Citations"
+                        onkeyup="filterGoogleScholarYearly()">
+                </div>
+                <h2>Yearly Citations(Google scholar)</h2>
+                <table id="googleScholarOnlyTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Citations</th>
+                            <th>H-Index</th>
+                            <th>I10-Index</th>
+                            <th>Yearly Citations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- data will be populated here -->
+                    </tbody>
+                </table>
             </div>
-            <h2>Yearly Citations(Google scholar)</h2>
-            <table id="googleScholarOnlyTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Citations</th>
-                        <th>H-Index</th>
-                        <th>I10-Index</th>
-                        <th>Yearly Citations</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- data will be populated here -->
-                </tbody>
-            </table>
-        </div>
 
-        <div id="paperDetailsContainer" class="hidden">
-            <div class="filter-container1">
-                <input type="text" id="filterNameGSDetails" placeholder="Filter by Name" onkeyup="filterGoogleScholarPapers()">
-                <input type="text" id="filterYearGSDetails" placeholder="Filter by Year" onkeyup="filterGoogleScholarPapers()">
+            <div id="paperDetailsContainer" class="hidden">
+                <div class="filter-container1">
+                    <input type="text" id="filterNameGSDetails" placeholder="Filter by Name"
+                        onkeyup="filterGoogleScholarPapers()">
+                    <input type="text" id="filterYearGSDetails" placeholder="Filter by Year"
+                        onkeyup="filterGoogleScholarPapers()">
+                </div>
+                <h2>Paper Details (Google Scholar)</h2>
+                <table id="paperDetailsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Year</th>
+                            <th>Citations</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- data will be populated here -->
+                    </tbody>
+                </table>
             </div>
-            <h2>Paper Details (Google Scholar)</h2>
-            <table id="paperDetailsTable">
+        </div>
+        <div class="table-wrapper"></div>
+        <div id="paperDetailsScopusContainer" class="hidden">
+            <div class="filter-container4">
+                <input type="text" id="filterNameScopus" placeholder="Filter by Name" onkeyup="filterScopusPapers()">
+                <input type="text" id="filterYearScopus" placeholder="Filter by Year" onkeyup="filterScopusPapers()">
+            </div>
+            <h2>Paper Details (Scopus)</h2>
+            <table id="paperDetailsScopusTable">
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>Title</th>
                         <th>Year</th>
                         <th>Citations</th>
-                        <th>Link</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -487,420 +534,413 @@ h2 {
                 </tbody>
             </table>
         </div>
-    </div>
-    <div class="table-wrapper"></div>
-    <div id="paperDetailsScopusContainer" class="hidden">
-        <div class="filter-container4">
-            <input type="text" id="filterNameScopus" placeholder="Filter by Name" onkeyup="filterScopusPapers()">
-            <input type="text" id="filterYearScopus" placeholder="Filter by Year" onkeyup="filterScopusPapers()">
+        <div id="loadingIndicator" style="display: none; text-align: center; margin-top: 20px;">
+            <p>Loading... Please wait</p>
         </div>
-        <h2>Paper Details (Scopus)</h2>
-        <table id="paperDetailsScopusTable">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Title</th>
-                    <th>Year</th>
-                    <th>Citations</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- data will be populated here -->
-            </tbody>
-        </table>
     </div>
-    <div id="loadingIndicator" style="display: none; text-align: center; margin-top: 20px;">
-        <p>Loading... Please wait</p>
-    </div>
-    </div>
-  
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
     <script>
-    document.getElementById('generateButton').addEventListener('click', function () {
-    const source = document.querySelector('input[name="citationSource"]:checked').value;
-    const resultContainer = document.getElementById('resultContainer');
-    const googleScholarOnlyContainer = document.getElementById('googleScholarOnlyContainer');
-    const paperDetailsContainer = document.getElementById('paperDetailsContainer');
-    const paperDetailsScopusContainer = document.getElementById('paperDetailsScopusContainer');
-    const loadingIndicator = document.getElementById('loadingIndicator');
-    const resultsTableBody = document.getElementById('resultsTable').getElementsByTagName('tbody')[0];
-    const googleScholarOnlyTableBody = document.getElementById('googleScholarOnlyTable').getElementsByTagName('tbody')[0];
-    const paperDetailsTableBody = document.getElementById('paperDetailsTable').getElementsByTagName('tbody')[0];
-    const paperDetailsScopusTableBody = document.getElementById('paperDetailsScopusTable').getElementsByTagName('tbody')[0];
+        document.getElementById('generateButton').addEventListener('click', function () {
+            const source = document.querySelector('input[name="citationSource"]:checked').value;
+            const resultContainer = document.getElementById('resultContainer');
+            const googleScholarOnlyContainer = document.getElementById('googleScholarOnlyContainer');
+            const paperDetailsContainer = document.getElementById('paperDetailsContainer');
+            const paperDetailsScopusContainer = document.getElementById('paperDetailsScopusContainer');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const resultsTableBody = document.getElementById('resultsTable').getElementsByTagName('tbody')[0];
+            const googleScholarOnlyTableBody = document.getElementById('googleScholarOnlyTable').getElementsByTagName('tbody')[0];
+            const paperDetailsTableBody = document.getElementById('paperDetailsTable').getElementsByTagName('tbody')[0];
+            const paperDetailsScopusTableBody = document.getElementById('paperDetailsScopusTable').getElementsByTagName('tbody')[0];
 
-    // Clear previous results
-    resultsTableBody.innerHTML = '';
-    googleScholarOnlyTableBody.innerHTML = '';
-    paperDetailsTableBody.innerHTML = '';
-    paperDetailsScopusTableBody.innerHTML = '';
+            // Clear previous results
+            resultsTableBody.innerHTML = '';
+            googleScholarOnlyTableBody.innerHTML = '';
+            paperDetailsTableBody.innerHTML = '';
+            paperDetailsScopusTableBody.innerHTML = '';
 
-    // Hide all result containers initially
-    resultContainer.classList.add('hidden');
-    googleScholarOnlyContainer.classList.add('hidden');
-    paperDetailsContainer.classList.add('hidden');
-    paperDetailsScopusContainer.classList.add('hidden');
+            // Hide all result containers initially
+            resultContainer.classList.add('hidden');
+            googleScholarOnlyContainer.classList.add('hidden');
+            paperDetailsContainer.classList.add('hidden');
+            paperDetailsScopusContainer.classList.add('hidden');
 
-    [resultContainer, googleScholarOnlyContainer, paperDetailsContainer, paperDetailsScopusContainer].forEach(container => {
-        container.classList.add('hidden');
-        if (container.getElementsByTagName('tbody')[0]) {
-            container.getElementsByTagName('tbody')[0].innerHTML = '';
-        }
-    });
-    
-    // Show loading indicator
-    loadingIndicator.style.display = 'block';
-
-    // Fetch data from the server
-    fetch('/generate_report', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ source: source })
-    })
-    .then(response => response.json())
-    .then(data => {
-            const totalAuthors = data.length;
-
-            loadingIndicator.style.display = 'none';
-
-            if (source === 'average') {
-                const authorsAverages = data.map(author => {
-                    const averagePapersGS = (author['Total Papers (Google Scholar)'] || 0) / totalAuthors;
-                    const averageCitationsGS = (author['Total Citations (Google Scholar)'] || 0) / totalAuthors;
-                    const averageHIndexGS = (author['H-Index (Google Scholar)'] || 0) / totalAuthors;
-                    const averageI10IndexGS = (author['I10 Index (Google Scholar)'] || 0) / totalAuthors;
-
-                    const averagePapersScopus = (author['Total Papers (Scopus)'] || 0) / totalAuthors;
-                    const averageCitationsScopus = (author['Total Citations (Scopus)'] || 0) / totalAuthors;
-                    const averageHIndexScopus = (author['H-Index (Scopus)'] || 0) / totalAuthors;
-
-                    return {
-                        name: author.Name,
-                        averagePapersGS: averagePapersGS.toFixed(2),
-                        averageCitationsGS: averageCitationsGS.toFixed(2),
-                        averageHIndexGS: averageHIndexGS.toFixed(2),
-                        averageI10IndexGS: averageI10IndexGS.toFixed(2),
-                        averagePapersScopus: averagePapersScopus.toFixed(2),
-                        averageCitationsScopus: averageCitationsScopus.toFixed(2),
-                        averageHIndexScopus: averageHIndexScopus.toFixed(2)
-                    };
-                });
-
-                // Display average data for both Google Scholar and Scopus
-                authorsAverages.forEach(author => {
-                    const row = resultsTableBody.insertRow();
-                    row.insertCell(0).innerText = author.name || 'N/A';
-                    row.insertCell(1).innerText = author.averagePapersGS || 'N/A';
-                    row.insertCell(2).innerText = author.averageCitationsGS || 'N/A';
-                    row.insertCell(3).innerText = author.averageHIndexGS || 'N/A';
-                    row.insertCell(4).innerText = author.averageI10IndexGS || 'N/A';
-                    row.insertCell(5).innerText = author.averagePapersScopus || 'N/A';
-                    row.insertCell(6).innerText = author.averageCitationsScopus || 'N/A';
-                    row.insertCell(7).innerText = author.averageHIndexScopus || 'N/A';
-                });
-
-                resultContainer.classList.remove('hidden');
-                showDownloadButton();
-
-            } else if (source === 'googleScholarOnly') {
-                // Populate Google Scholar only results
-                data.forEach(author => {
-                    const row = googleScholarOnlyTableBody.insertRow();
-                    row.insertCell(0).innerText = author.Name || 'N/A';
-                    row.insertCell(1).innerText = author['Total Citations'] || 'N/A';
-                    row.insertCell(2).innerText = author['H-Index'] || 'N/A';
-                    row.insertCell(3).innerText = author['I10 Index'] || 'N/A';
-                    row.insertCell(4).innerText = author['Yearly Citations'] || 'N/A';
-                });
-                googleScholarOnlyContainer.classList.remove('hidden');
-                showDownloadButton();
-
-            }else if (source === 'paperDetailsScopus') {
-        let authorCounter = 1;
-
-        data.forEach(author => {
-            let paperCounter = 1;
-            
-                    // addd author name as a header row with link
-                    const headerRow = paperDetailsScopusTableBody.insertRow();
-                    const headerCell = headerRow.insertCell(0);
-                    const authorLink = document.createElement('a');
-                    authorLink.href = author.ProfileLink;
-                    authorLink.textContent = `${authorCounter}. ${author.Name || 'N/A'}`;
-                    authorLink.target = '_blank';  // open in new tab
-                    headerCell.appendChild(authorLink);
-                    headerCell.style.fontWeight = 'bold';
-                    headerCell.colSpan = 4;
-                    headerCell.style.backgroundColor = '#f0f0f0';
-
-            // Add each paper as a row
-            author.ScopusPapers.forEach(paper => {
-                const row = paperDetailsScopusTableBody.insertRow();
-                row.insertCell(0).innerText = `${authorCounter}.${paperCounter}`;
-                row.insertCell(1).innerText = paper.title || 'N/A';
-                row.insertCell(2).innerText = paper.year || 'N/A';
-                row.insertCell(3).innerText = paper.citations || 'N/A';
-
-                paperCounter++;
+            [resultContainer, googleScholarOnlyContainer, paperDetailsContainer, paperDetailsScopusContainer].forEach(container => {
+                container.classList.add('hidden');
+                if (container.getElementsByTagName('tbody')[0]) {
+                    container.getElementsByTagName('tbody')[0].innerHTML = '';
+                }
             });
 
-            // Add a spacer row
-            const spacerRow = paperDetailsScopusTableBody.insertRow();
-            spacerRow.insertCell(0).colSpan = 4;
-            spacerRow.style.height = '10px';
+            // Show loading indicator
+            loadingIndicator.style.display = 'block';
 
-            authorCounter++;
-        });
-        paperDetailsScopusContainer.classList.remove('hidden');
-        showDownloadButton();
-    
+            // Fetch data from the server
+            fetch('/generate_report', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ source: source })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const totalAuthors = data.length;
 
-            }  else if (source === 'paperDetails') {
-    let authorCounter = 1;
+                    loadingIndicator.style.display = 'none';
 
-    data.forEach(author => {
-        let paperCounter = 1;
-        
-        // Add author name as a header row
-        const headerRow = paperDetailsTableBody.insertRow();
-        const headerCell = headerRow.insertCell(0);
-        headerCell.innerText = `${authorCounter}. ${author.Name || 'N/A'}`;
-        headerCell.style.fontWeight = 'bold';
-        headerCell.colSpan = 5; 
-        headerCell.style.backgroundColor = '#f0f0f0';
+                    // Reset headers back to "Total Citations" in case they were changed by "Average Citation"
+                    document.querySelector('#resultsTable thead tr:nth-child(2) th:nth-child(3)').innerText = "Total Citations";
+                    document.querySelector('#resultsTable thead tr:nth-child(2) th:nth-child(7)').innerText = "Total Citations";
 
-        // Add each paper as a row
-        author.Papers.forEach(paper => {
-            const row = paperDetailsTableBody.insertRow();
-            row.insertCell(0).innerText = `${authorCounter}.${paperCounter}`;
-            row.insertCell(1).innerText = paper.title || 'N/A';
-            row.insertCell(2).innerText = paper.year || 'N/A';
-            row.insertCell(3).innerText = paper.citations || 'N/A';
-            
-            // Add a link cell if you have links to the papers
-            const linkCell = row.insertCell(4);
-            if (paper.link) {
-                const link = document.createElement('a');
-                link.href = paper.link;
-                link.textContent = 'View';
-                link.target = '_blank';
-                linkCell.appendChild(link);
-            } else {
-                linkCell.innerText = 'N/A';
-            }
+                    if (source === 'average') {
+                        // Change the headers to "Average Citations"
+                        document.querySelector('#resultsTable thead tr:nth-child(2) th:nth-child(3)').innerText = "Average Citations";
+                        document.querySelector('#resultsTable thead tr:nth-child(2) th:nth-child(7)').innerText = "Average Citations";
 
-            paperCounter++;
-        });
+                        const authorsAverages = data.map(author => {
+                            const papersGS = author['Total Papers (Google Scholar)'] || 0;
+                            const citationsGS = author['Total Citations (Google Scholar)'] || 0;
+                            const hIndexGS = author['H-Index (Google Scholar)'] || 0;
+                            const i10IndexGS = author['I10 Index (Google Scholar)'] || 0;
 
-        const spacerRow = paperDetailsTableBody.insertRow();
-        spacerRow.insertCell(0).colSpan = 5;
-        spacerRow.style.height = '10px';
+                            const papersScopus = author['Total Papers (Scopus)'] || 0;
+                            const citationsScopus = author['Total Citations (Scopus)'] || 0;
+                            const hIndexScopus = author['H-Index (Scopus)'] || 0;
 
-        authorCounter++;
-    });
-    paperDetailsContainer.classList.remove('hidden');
-    showDownloadButton();
- } else {
-                data.forEach(author => {
-                    const row = resultsTableBody.insertRow();
-                    row.insertCell(0).innerText = author.Name || 'N/A';
-                    row.insertCell(1).innerText = author['Total Papers (Google Scholar)'] || 'N/A';
-                    row.insertCell(2).innerText = author['Total Citations (Google Scholar)'] || 'N/A';
-                    row.insertCell(3).innerText = author['H-Index (Google Scholar)'] || 'N/A';
-                    row.insertCell(4).innerText = author['I10 Index (Google Scholar)'] || 'N/A';
-                    row.insertCell(5).innerText = author['Total Papers (Scopus)'] || 'N/A';
-                    row.insertCell(6).innerText = author['Total Citations (Scopus)'] || 'N/A';
-                    row.insertCell(7).innerText = author['H-Index (Scopus)'] || 'N/A';
+                            // Average = Total Citations / Total Papers
+                            const averageCitationsGS = papersGS > 0 ? (citationsGS / papersGS).toFixed(2) : '0.00';
+                            const averageCitationsScopus = papersScopus > 0 ? (citationsScopus / papersScopus).toFixed(2) : '0.00';
+
+                            return {
+                                name: author.Name,
+                                papersGS: papersGS,
+                                averageCitationsGS: averageCitationsGS,
+                                hIndexGS: hIndexGS,
+                                i10IndexGS: i10IndexGS,
+                                papersScopus: papersScopus,
+                                averageCitationsScopus: averageCitationsScopus,
+                                hIndexScopus: hIndexScopus
+                            };
+                        });
+
+                        // Display average data for both Google Scholar and Scopus
+                        authorsAverages.forEach(author => {
+                            const row = resultsTableBody.insertRow();
+                            row.insertCell(0).innerText = author.name || 'N/A';
+                            row.insertCell(1).innerText = author.papersGS;
+                            row.insertCell(2).innerText = author.averageCitationsGS;
+                            row.insertCell(3).innerText = author.hIndexGS;
+                            row.insertCell(4).innerText = author.i10IndexGS;
+                            row.insertCell(5).innerText = author.papersScopus;
+                            row.insertCell(6).innerText = author.averageCitationsScopus;
+                            row.insertCell(7).innerText = author.hIndexScopus;
+                        });
+
+                        resultContainer.classList.remove('hidden');
+                        showDownloadButton();
+
+                    } else if (source === 'googleScholarOnly') {
+                        // Populate Google Scholar only results
+                        data.forEach(author => {
+                            const row = googleScholarOnlyTableBody.insertRow();
+                            row.insertCell(0).innerText = author.Name || 'N/A';
+                            row.insertCell(1).innerText = author['Total Citations'] || 'N/A';
+                            row.insertCell(2).innerText = author['H-Index'] || 'N/A';
+                            row.insertCell(3).innerText = author['I10 Index'] || 'N/A';
+                            row.insertCell(4).innerText = author['Yearly Citations'] || 'N/A';
+                        });
+                        googleScholarOnlyContainer.classList.remove('hidden');
+                        showDownloadButton();
+
+                    } else if (source === 'paperDetailsScopus') {
+                        let authorCounter = 1;
+
+                        data.forEach(author => {
+                            let paperCounter = 1;
+
+                            // addd author name as a header row with link
+                            const headerRow = paperDetailsScopusTableBody.insertRow();
+                            const headerCell = headerRow.insertCell(0);
+                            const authorLink = document.createElement('a');
+                            authorLink.href = author.ProfileLink;
+                            authorLink.textContent = `${authorCounter}. ${author.Name || 'N/A'}`;
+                            authorLink.target = '_blank';  // open in new tab
+                            headerCell.appendChild(authorLink);
+                            headerCell.style.fontWeight = 'bold';
+                            headerCell.colSpan = 4;
+                            headerCell.style.backgroundColor = '#f0f0f0';
+
+                            // Add each paper as a row
+                            author.ScopusPapers.forEach(paper => {
+                                const row = paperDetailsScopusTableBody.insertRow();
+                                row.insertCell(0).innerText = `${authorCounter}.${paperCounter}`;
+                                row.insertCell(1).innerText = paper.title || 'N/A';
+                                row.insertCell(2).innerText = paper.year || 'N/A';
+                                row.insertCell(3).innerText = paper.citations || 'N/A';
+
+                                paperCounter++;
+                            });
+
+                            // Add a spacer row
+                            const spacerRow = paperDetailsScopusTableBody.insertRow();
+                            spacerRow.insertCell(0).colSpan = 4;
+                            spacerRow.style.height = '10px';
+
+                            authorCounter++;
+                        });
+                        paperDetailsScopusContainer.classList.remove('hidden');
+                        showDownloadButton();
+
+
+                    } else if (source === 'paperDetails') {
+                        let authorCounter = 1;
+
+                        data.forEach(author => {
+                            let paperCounter = 1;
+
+                            // Add author name as a header row
+                            const headerRow = paperDetailsTableBody.insertRow();
+                            const headerCell = headerRow.insertCell(0);
+                            headerCell.innerText = `${authorCounter}. ${author.Name || 'N/A'}`;
+                            headerCell.style.fontWeight = 'bold';
+                            headerCell.colSpan = 5;
+                            headerCell.style.backgroundColor = '#f0f0f0';
+
+                            // Add each paper as a row
+                            author.Papers.forEach(paper => {
+                                const row = paperDetailsTableBody.insertRow();
+                                row.insertCell(0).innerText = `${authorCounter}.${paperCounter}`;
+                                row.insertCell(1).innerText = paper.title || 'N/A';
+                                row.insertCell(2).innerText = paper.year || 'N/A';
+                                row.insertCell(3).innerText = paper.citations || 'N/A';
+
+                                // Add a link cell if you have links to the papers
+                                const linkCell = row.insertCell(4);
+                                if (paper.link) {
+                                    const link = document.createElement('a');
+                                    link.href = paper.link;
+                                    link.textContent = 'View';
+                                    link.target = '_blank';
+                                    linkCell.appendChild(link);
+                                } else {
+                                    linkCell.innerText = 'N/A';
+                                }
+
+                                paperCounter++;
+                            });
+
+                            const spacerRow = paperDetailsTableBody.insertRow();
+                            spacerRow.insertCell(0).colSpan = 5;
+                            spacerRow.style.height = '10px';
+
+                            authorCounter++;
+                        });
+                        paperDetailsContainer.classList.remove('hidden');
+                        showDownloadButton();
+                    } else {
+                        data.forEach(author => {
+                            const row = resultsTableBody.insertRow();
+                            row.insertCell(0).innerText = author.Name || 'N/A';
+                            row.insertCell(1).innerText = author['Total Papers (Google Scholar)'] || 'N/A';
+                            row.insertCell(2).innerText = author['Total Citations (Google Scholar)'] || 'N/A';
+                            row.insertCell(3).innerText = author['H-Index (Google Scholar)'] || 'N/A';
+                            row.insertCell(4).innerText = author['I10 Index (Google Scholar)'] || 'N/A';
+                            row.insertCell(5).innerText = author['Total Papers (Scopus)'] || 'N/A';
+                            row.insertCell(6).innerText = author['Total Citations (Scopus)'] || 'N/A';
+                            row.insertCell(7).innerText = author['H-Index (Scopus)'] || 'N/A';
+                        });
+
+                        resultContainer.classList.remove('hidden');
+                        showDownloadButton();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
                 });
-
-                resultContainer.classList.remove('hidden');
-                showDownloadButton();
-            } 
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
         });
-    });
 
-function showDownloadButton() {
-    const resultContainer = document.getElementById('resultContainer');
-    const googleScholarOnlyContainer = document.getElementById('googleScholarOnlyContainer');
-    const paperDetailsContainer = document.getElementById('paperDetailsContainer');
-    const paperDetailsScopusContainer = document.getElementById('paperDetailsScopusContainer');
-    const downloadBtn = document.getElementById('download-btn');
+        function showDownloadButton() {
+            const resultContainer = document.getElementById('resultContainer');
+            const googleScholarOnlyContainer = document.getElementById('googleScholarOnlyContainer');
+            const paperDetailsContainer = document.getElementById('paperDetailsContainer');
+            const paperDetailsScopusContainer = document.getElementById('paperDetailsScopusContainer');
+            const downloadBtn = document.getElementById('download-btn');
 
-    const hasData = 
-        (!resultContainer.classList.contains('hidden') && document.getElementById('resultsTable').rows.length > 1) ||
-        (!googleScholarOnlyContainer.classList.contains('hidden') && document.getElementById('googleScholarOnlyTable').rows.length > 1) ||
-        (!paperDetailsContainer.classList.contains('hidden') && document.getElementById('paperDetailsTable').rows.length > 1) ||
-        (!paperDetailsScopusContainer.classList.contains('hidden') && document.getElementById('paperDetailsScopusTable').rows.length > 1);
+            const hasData =
+                (!resultContainer.classList.contains('hidden') && document.getElementById('resultsTable').rows.length > 1) ||
+                (!googleScholarOnlyContainer.classList.contains('hidden') && document.getElementById('googleScholarOnlyTable').rows.length > 1) ||
+                (!paperDetailsContainer.classList.contains('hidden') && document.getElementById('paperDetailsTable').rows.length > 1) ||
+                (!paperDetailsScopusContainer.classList.contains('hidden') && document.getElementById('paperDetailsScopusTable').rows.length > 1);
 
-    downloadBtn.style.display = hasData ? 'block' : 'none';
-}
-function downloadExcel() {
-    let tableId;
-    let fileName;
-
-    if (!document.getElementById('resultContainer').classList.contains('hidden') && document.getElementById('resultsTable').rows.length > 1) {
-        tableId = 'resultsTable';
-        if (document.querySelector('input[name="citationSource"]:checked').value === 'average') {
-            fileName = 'Average_Citations_Data.xlsx';
-        } else {
-            fileName = 'Google_Scholar_and_Scopus_Data.xlsx';
+            downloadBtn.style.display = hasData ? 'block' : 'none';
         }
-    } else if (!document.getElementById('googleScholarOnlyContainer').classList.contains('hidden') && document.getElementById('googleScholarOnlyTable').rows.length > 1) {
-        tableId = 'googleScholarOnlyTable';
-        fileName = 'Google_Scholar_Yearly_Citations.xlsx';
-    } else if (!document.getElementById('paperDetailsContainer').classList.contains('hidden') && document.getElementById('paperDetailsTable').rows.length > 1) {
-        tableId = 'paperDetailsTable';
-        fileName = 'Google_Scholar_Paper_Details.xlsx';
-    } else if (!document.getElementById('paperDetailsScopusContainer').classList.contains('hidden') && document.getElementById('paperDetailsScopusTable').rows.length > 1) {
-        tableId = 'paperDetailsScopusTable';
-        fileName = 'Scopus_Paper_Details.xlsx';
-    }
+        function downloadExcel() {
+            let tableId;
+            let fileName;
 
-    if (tableId) {
-        const table = document.getElementById(tableId);
-        const ws = XLSX.utils.table_to_sheet(table);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-        XLSX.writeFile(wb, fileName);
-    }
-}
-    
-</script>
-<script>
-    function filterTable() {
-        let table = document.getElementById("resultsTable");
-        let tbody = table.querySelector("tbody");
-        let filterValue = document.getElementById("filterName").value.toLowerCase();
-    
-        tbody.querySelectorAll("tr").forEach(row => {
-            let nameCell = row.children[0]; // First column (Name)
-            if (nameCell) {
-                let text = nameCell.innerText.toLowerCase();
-                row.style.display = text.includes(filterValue) ? "" : "none";
-            }
-        });
-    }
-    </script>
-  <script>
-    function filterGoogleScholarPapers() {
-        let table = document.getElementById("paperDetailsTable");
-        let tbody = table.querySelector("tbody");
-        let nameFilter = document.getElementById("filterNameGSDetails").value.toLowerCase().trim();
-        let yearFilter = document.getElementById("filterYearGSDetails").value.toLowerCase().trim();
-        
-        let showAuthor = false; // Track if an author's row should be shown
-    
-        tbody.querySelectorAll("tr").forEach(row => {
-            let firstCell = row.children[0];
-            let isAuthorRow = row.children.length === 1; // Author row spans across columns
-    
-            if (isAuthorRow) {
-                let authorName = firstCell.innerText.toLowerCase().trim();
-                showAuthor = nameFilter === "" || authorName.includes(nameFilter); // Check if author's name matches
-                row.style.display = "none"; // Initially hide the author row
-            } else {
-                let yearCell = row.children.length > 2 ? row.children[2] : null; // Get Year column (3rd column)
-                let showRow = showAuthor; // Show papers only if author is visible
-    
-                if (yearFilter && yearCell) {
-                    let paperYear = yearCell.innerText.toLowerCase().trim();
-                    showRow = showAuthor && paperYear.includes(yearFilter); // Show only if both match
+            if (!document.getElementById('resultContainer').classList.contains('hidden') && document.getElementById('resultsTable').rows.length > 1) {
+                tableId = 'resultsTable';
+                if (document.querySelector('input[name="citationSource"]:checked').value === 'average') {
+                    fileName = 'Average_Citations_Data.xlsx';
+                } else {
+                    fileName = 'Google_Scholar_and_Scopus_Data.xlsx';
                 }
-    
-                row.style.display = showRow ? "" : "none";
-    
-                // If at least one paper matches, show the author's row
-                if (showRow) {
-                    firstCell.closest("tbody").querySelectorAll("tr").forEach(authorRow => {
-                        if (authorRow.children.length === 1 && authorRow.children[0].innerText.toLowerCase().includes(nameFilter)) {
-                            authorRow.style.display = "";
-                        }
-                    });
-                }
+            } else if (!document.getElementById('googleScholarOnlyContainer').classList.contains('hidden') && document.getElementById('googleScholarOnlyTable').rows.length > 1) {
+                tableId = 'googleScholarOnlyTable';
+                fileName = 'Google_Scholar_Yearly_Citations.xlsx';
+            } else if (!document.getElementById('paperDetailsContainer').classList.contains('hidden') && document.getElementById('paperDetailsTable').rows.length > 1) {
+                tableId = 'paperDetailsTable';
+                fileName = 'Google_Scholar_Paper_Details.xlsx';
+            } else if (!document.getElementById('paperDetailsScopusContainer').classList.contains('hidden') && document.getElementById('paperDetailsScopusTable').rows.length > 1) {
+                tableId = 'paperDetailsScopusTable';
+                fileName = 'Scopus_Paper_Details.xlsx';
             }
-        });
-    }
-    </script>
-    
-  <script>
-    function filterGoogleScholarYearly() {
-        let table = document.getElementById("googleScholarOnlyTable");
-        let tbody = table.querySelector("tbody");
-        let nameFilter = document.getElementById("filterNameGSYearly").value.toLowerCase().trim();
-        let yearlyCitationsFilter = document.getElementById("filterYearlyCitationsGS").value.toLowerCase().trim();
-    
-        tbody.querySelectorAll("tr").forEach(row => {
-            let nameCell = row.children[0]; // First column (Name)
-            let yearlyCitationsCell = row.children[4]; // Fifth column (Yearly Citations)
-            let showRow = true;
-    
-            if (nameFilter && nameCell && !nameCell.innerText.toLowerCase().includes(nameFilter)) {
-                showRow = false;
-            }
-    
-            if (yearlyCitationsFilter && yearlyCitationsCell && !yearlyCitationsCell.innerText.toLowerCase().includes(yearlyCitationsFilter)) {
-                showRow = false;
-            }
-    
-            row.style.display = showRow ? "" : "none";
-        });
-    }
-    </script>
-<script>
-    function filterScopusPapers() {
-        let table = document.getElementById("paperDetailsScopusTable");
-        let tbody = table.querySelector("tbody");
-        let nameFilter = document.getElementById("filterNameScopus").value.toLowerCase().trim();
-        let yearFilter = document.getElementById("filterYearScopus").value.toLowerCase().trim();
-        
-        let showAuthor = false; // Track if an author's row should be shown
-    
-        tbody.querySelectorAll("tr").forEach(row => {
-            let firstCell = row.children[0];
-            let isAuthorRow = row.children.length === 1; // Author row spans across columns
-    
-            if (isAuthorRow) {
-                let authorName = firstCell.innerText.toLowerCase().trim();
-                showAuthor = nameFilter === "" || authorName.includes(nameFilter); // Check if author's name matches
-                row.style.display = "none"; // Initially hide the author
-            } else {
-                let yearCell = row.children.length > 2 ? row.children[2] : null; // Get Year column (3rd column)
-                let showRow = showAuthor; // Show papers only if author is visible
-    
-                if (yearFilter && yearCell) {
-                    let paperYear = yearCell.innerText.toLowerCase().trim();
-                    showRow = showAuthor && paperYear.includes(yearFilter); // Show only if both match
-                }
-    
-                row.style.display = showRow ? "" : "none";
-    
-                // If any paper under an author is visible, show the author's row
-                if (showRow) {
-                    firstCell.closest("tbody").querySelectorAll("tr").forEach(authorRow => {
-                        if (authorRow.children.length === 1 && authorRow.children[0].innerText.toLowerCase().includes(nameFilter)) {
-                            authorRow.style.display = "";
-                        }
-                    });
-                }
-            }
-        });
-    }
-    </script>
-    
-    
-        
-        
 
-    
+            if (tableId) {
+                const table = document.getElementById(tableId);
+                const ws = XLSX.utils.table_to_sheet(table);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+                XLSX.writeFile(wb, fileName);
+            }
+        }
+
+    </script>
+    <script>
+        function filterTable() {
+            let table = document.getElementById("resultsTable");
+            let tbody = table.querySelector("tbody");
+            let filterValue = document.getElementById("filterName").value.toLowerCase();
+
+            tbody.querySelectorAll("tr").forEach(row => {
+                let nameCell = row.children[0]; // First column (Name)
+                if (nameCell) {
+                    let text = nameCell.innerText.toLowerCase();
+                    row.style.display = text.includes(filterValue) ? "" : "none";
+                }
+            });
+        }
+    </script>
+    <script>
+        function filterGoogleScholarPapers() {
+            let table = document.getElementById("paperDetailsTable");
+            let tbody = table.querySelector("tbody");
+            let nameFilter = document.getElementById("filterNameGSDetails").value.toLowerCase().trim();
+            let yearFilter = document.getElementById("filterYearGSDetails").value.toLowerCase().trim();
+
+            let showAuthor = false; // Track if an author's row should be shown
+
+            tbody.querySelectorAll("tr").forEach(row => {
+                let firstCell = row.children[0];
+                let isAuthorRow = row.children.length === 1; // Author row spans across columns
+
+                if (isAuthorRow) {
+                    let authorName = firstCell.innerText.toLowerCase().trim();
+                    showAuthor = nameFilter === "" || authorName.includes(nameFilter); // Check if author's name matches
+                    row.style.display = "none"; // Initially hide the author row
+                } else {
+                    let yearCell = row.children.length > 2 ? row.children[2] : null; // Get Year column (3rd column)
+                    let showRow = showAuthor; // Show papers only if author is visible
+
+                    if (yearFilter && yearCell) {
+                        let paperYear = yearCell.innerText.toLowerCase().trim();
+                        showRow = showAuthor && paperYear.includes(yearFilter); // Show only if both match
+                    }
+
+                    row.style.display = showRow ? "" : "none";
+
+                    // If at least one paper matches, show the author's row
+                    if (showRow) {
+                        firstCell.closest("tbody").querySelectorAll("tr").forEach(authorRow => {
+                            if (authorRow.children.length === 1 && authorRow.children[0].innerText.toLowerCase().includes(nameFilter)) {
+                                authorRow.style.display = "";
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script>
+        function filterGoogleScholarYearly() {
+            let table = document.getElementById("googleScholarOnlyTable");
+            let tbody = table.querySelector("tbody");
+            let nameFilter = document.getElementById("filterNameGSYearly").value.toLowerCase().trim();
+            let yearlyCitationsFilter = document.getElementById("filterYearlyCitationsGS").value.toLowerCase().trim();
+
+            tbody.querySelectorAll("tr").forEach(row => {
+                let nameCell = row.children[0]; // First column (Name)
+                let yearlyCitationsCell = row.children[4]; // Fifth column (Yearly Citations)
+                let showRow = true;
+
+                if (nameFilter && nameCell && !nameCell.innerText.toLowerCase().includes(nameFilter)) {
+                    showRow = false;
+                }
+
+                if (yearlyCitationsFilter && yearlyCitationsCell && !yearlyCitationsCell.innerText.toLowerCase().includes(yearlyCitationsFilter)) {
+                    showRow = false;
+                }
+
+                row.style.display = showRow ? "" : "none";
+            });
+        }
+    </script>
+    <script>
+        function filterScopusPapers() {
+            let table = document.getElementById("paperDetailsScopusTable");
+            let tbody = table.querySelector("tbody");
+            let nameFilter = document.getElementById("filterNameScopus").value.toLowerCase().trim();
+            let yearFilter = document.getElementById("filterYearScopus").value.toLowerCase().trim();
+
+            let showAuthor = false; // Track if an author's row should be shown
+
+            tbody.querySelectorAll("tr").forEach(row => {
+                let firstCell = row.children[0];
+                let isAuthorRow = row.children.length === 1; // Author row spans across columns
+
+                if (isAuthorRow) {
+                    let authorName = firstCell.innerText.toLowerCase().trim();
+                    showAuthor = nameFilter === "" || authorName.includes(nameFilter); // Check if author's name matches
+                    row.style.display = "none"; // Initially hide the author
+                } else {
+                    let yearCell = row.children.length > 2 ? row.children[2] : null; // Get Year column (3rd column)
+                    let showRow = showAuthor; // Show papers only if author is visible
+
+                    if (yearFilter && yearCell) {
+                        let paperYear = yearCell.innerText.toLowerCase().trim();
+                        showRow = showAuthor && paperYear.includes(yearFilter); // Show only if both match
+                    }
+
+                    row.style.display = showRow ? "" : "none";
+
+                    // If any paper under an author is visible, show the author's row
+                    if (showRow) {
+                        firstCell.closest("tbody").querySelectorAll("tr").forEach(authorRow => {
+                            if (authorRow.children.length === 1 && authorRow.children[0].innerText.toLowerCase().includes(nameFilter)) {
+                                authorRow.style.display = "";
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+
     <footer>
         <div class="footer-container">
-            <p>Ideation by <span class="name">Dr. Ashok Immanuel</span>, guided by <span class="name">Dr. Nisha Varghese</span>, developed & maintained by<span class="name"> Parichoy Nandi & Darshan Heble</span>.</p>
+            <p>Ideation by <span class="name">Dr. Ashok Immanuel</span>, guided by <span class="name">Dr. Nisha
+                    Varghese</span>, developed & maintained by<span class="name"> Parichoy Nandi & Darshan Heble</span>.
+            </p>
         </div>
     </footer>
-    
+
 </body>
+
 </html>
