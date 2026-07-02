@@ -1,0 +1,28 @@
+{
+  "name": "citations-grpc-node",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js/TypeScript port of the Python gRPC citation-fetching service (see python-grpc-prototype/) for a REST-vs-gRPC comparative analysis against OldCode.",
+  "main": "dist/server.js",
+  "scripts": {
+    "proto:gen": "grpc_tools_node_protoc --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=./src/generated --ts_proto_opt=outputServices=grpc-js,esModuleInterop=true,env=node -I ./proto ./proto/citations.proto",
+    "build": "npm run proto:gen && tsc",
+    "dev": "npm run proto:gen && tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "client": "tsx scripts/testClient.ts",
+    "test": "node --import tsx --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.9",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "undici": "^6.19.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "grpc-tools": "^1.12.4",
+    "ts-proto": "^1.181.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}

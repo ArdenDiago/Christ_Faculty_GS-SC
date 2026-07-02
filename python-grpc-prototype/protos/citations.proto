@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package citations;
+
+// Mirrors OldCode's /generate_report endpoint (see app.py), but split into
+// typed, purpose-specific RPCs instead of one endpoint branching on a
+// `source` string. All three RPCs server-stream one message per author as
+// soon as that author's fetch completes, instead of REST's
+// asyncio.gather()-everything-then-return-one-JSON-array.
+service CitationService {
+  // Mirrors source="paperDetails"
+  rpc StreamGoogleScholarPapers(Empty) returns (stream AuthorPapers);
+
+  // Mirrors source="paperDetailsScopus"
+  rpc StreamScopusPapers(Empty) returns (stream AuthorScopusPapers);
+
+  // Mirrors source in {both, average, googleScholarOnly, scopus, googleScholar}.
+  // Always carries every field; callers pick what they need instead of the
+  // server pre-shaping five different response shapes per source string.
+  rpc StreamCombinedStats(Empty) returns (stream CombinedAuthorStats);
+}
+
+message Empty {}
+
+message Paper {
+  string title = 1;
+  string link = 2;
+  string citations = 3;
+  string year = 4;
+}
+
+message AuthorPapers {
+  string name = 1;
+  repeated Paper papers = 2;
+}
+
+message ScopusPaper {
+  string title = 1;
+  string year = 2;
+  string citations = 3;
+  string link = 4;
+}
+
+message AuthorScopusPapers {
+  string name = 1;
+  repeated ScopusPaper papers = 2;
+  string profile_link = 3;
+}
+
+message CombinedAuthorStats {
+  string name = 1;
+  int32 papers_google_scholar = 2;
+  int32 citations_google_scholar = 3;
+  int32 h_index_google_scholar = 4;
+  int32 i10_index_google_scholar = 5;
+  map<string, int32> yearly_citations_google_scholar = 6;
+  int32 papers_scopus = 7;
+  int32 citations_scopus = 8;
+  int32 h_index_scopus = 9;
+}
