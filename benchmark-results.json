@@ -1,0 +1,65 @@
+[
+  {
+    "label": "Google Scholar paper details",
+    "restSource": "paperDetails",
+    "grpcRpc": "StreamGoogleScholarPapers",
+    "rest": {
+      "system": "REST",
+      "source": "paperDetails",
+      "totalMs": 149970.332894,
+      "statusCode": 200,
+      "authorCount": 53,
+      "bytes": 3033
+    },
+    "grpc": {
+      "system": "gRPC",
+      "rpc": "StreamGoogleScholarPapers",
+      "firstMessageMs": 46.745307000004686,
+      "totalMs": 53986.693053000025,
+      "authorCount": 53,
+      "bytes": 12241
+    }
+  },
+  {
+    "label": "Scopus paper details",
+    "restSource": "paperDetailsScopus",
+    "grpcRpc": "StreamScopusPapers",
+    "rest": {
+      "system": "REST",
+      "source": "paperDetailsScopus",
+      "totalMs": 20722.41451999999,
+      "statusCode": 200,
+      "authorCount": 56,
+      "bytes": 309359
+    },
+    "grpc": {
+      "system": "gRPC",
+      "rpc": "StreamScopusPapers",
+      "firstMessageMs": 8.509813999990001,
+      "totalMs": 22071.677362999995,
+      "authorCount": 56,
+      "bytes": 179299
+    }
+  },
+  {
+    "label": "Combined Google Scholar + Scopus stats",
+    "restSource": "both",
+    "grpcRpc": "StreamCombinedStats",
+    "rest": {
+      "system": "REST",
+      "source": "both",
+      "totalMs": 162362.000442,
+      "statusCode": 200,
+      "authorCount": 56,
+      "bytes": 19014
+    },
+    "grpc": {
+      "system": "gRPC",
+      "rpc": "StreamCombinedStats",
+      "firstMessageMs": 10.627679999975953,
+      "totalMs": 69627.53511300002,
+      "authorCount": 56,
+      "bytes": 1297
+    }
+  }
+]
